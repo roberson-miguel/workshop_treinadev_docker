@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'User visits challenges page' do
   scenario 'successfully' do
-    login_as create(:user)
+    login_as = create(:user)
     challenge = create(:challenge)
     visit challenges_path
     expect(page).to have_content challenge.title
@@ -10,7 +10,7 @@ feature 'User visits challenges page' do
   end
 
   scenario 'multiple challeges' do
-    login_as create(:user)
+    login_as = create(:user)
     challenges = []
     challenges << create(:challenge)
     challenges << create(:challenge, title: 'Outro Desafio',
